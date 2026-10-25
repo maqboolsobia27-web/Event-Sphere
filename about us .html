@@ -1,0 +1,1932 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff8fc">
+
+  <title>Event Sphere | Luxury Event Planning in Karachi</title>
+  <meta name="description" content="Event Sphere plans weddings, birthdays, bridal showers, baby showers, corporate events, cultural celebrations, trade shows, exhibitions and private events in Karachi.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #ef63ac;
+      --pink-dark: #d94696;
+      --pink-light: #fff0f8;
+      --purple: #7848c7;
+      --purple-dark: #382050;
+      --purple-light: #f3edff;
+      --cream: #fff8fc;
+      --white: #ffffff;
+      --text: #594c61;
+      --muted: #887b91;
+      --border: #f0e3f1;
+      --shadow: 0 18px 50px rgba(76,39,94,.09);
+      --radius: 22px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .section-space {
+      padding: 95px 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--pink-dark);
+      background: var(--pink-light);
+      padding: 8px 15px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--purple);
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      color: var(--purple-dark);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 610px;
+      margin: 0 auto;
+      font-size: 15px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(110deg, var(--pink-dark), var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* NAVBAR */
+
+    .navbar {
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(240,227,241,.8);
+      padding: 15px 0;
+      transition: box-shadow .3s ease, padding .3s ease;
+    }
+
+    .navbar.scrolled {
+      box-shadow: 0 8px 30px rgba(56,32,80,.08);
+      padding: 10px 0;
+    }
+
+    .navbar-brand,
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--purple-dark);
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border-radius: 15px;
+      background: linear-gradient(135deg,var(--pink),var(--purple));
+      color: white;
+      font-size: 23px;
+      box-shadow: 0 8px 20px rgba(217,70,150,.2);
+    }
+
+    .brand-name {
+      display: block;
+      font-family: "Playfair Display",serif;
+      font-size: 21px;
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    .brand-caption {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .navbar .nav-link {
+      position: relative;
+      padding: 10px 11px !important;
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 700;
+      transition: color .25s ease;
+    }
+
+    .navbar .nav-link:hover,
+    .navbar .nav-link.active {
+      color: var(--pink-dark);
+    }
+
+    .navbar .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: 3px;
+      left: 11px;
+      width: 0;
+      height: 2px;
+      background: var(--pink);
+      transition: width .25s ease;
+    }
+
+    .navbar .nav-link:hover::after,
+    .navbar .nav-link.active::after {
+      width: calc(100% - 22px);
+    }
+
+    .btn-primary-custom,
+    .btn-outline-custom {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 49px;
+      padding: 13px 23px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: all .3s ease;
+    }
+
+    .btn-primary-custom {
+      border: 1px solid transparent;
+      background: linear-gradient(110deg,var(--pink-dark),var(--purple));
+      color: white;
+      box-shadow: 0 10px 24px rgba(120,72,199,.2);
+    }
+
+    .btn-primary-custom:hover {
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(120,72,199,.27);
+    }
+
+    .btn-outline-custom {
+      color: var(--purple-dark);
+      border: 1px solid #e6d7ee;
+      background: white;
+    }
+
+    .btn-outline-custom:hover {
+      color: var(--pink-dark);
+      border-color: var(--pink);
+      transform: translateY(-3px);
+    }
+
+    .navbar-toggler {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 8px 11px;
+      box-shadow: none !important;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 75px 0 82px;
+      background:
+        radial-gradient(ellipse at 4% 8%,rgba(239,99,172,.12),transparent 33%),
+        radial-gradient(ellipse at 100% 80%,rgba(120,72,199,.10),transparent 35%),
+        linear-gradient(135deg,#fffafd 0%,#fff7fc 55%,#f8f3ff 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      top: -120px;
+      right: 10%;
+      border: 1px solid rgba(239,99,172,.17);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding-right: 20px;
+    }
+
+    .hero h1 {
+      max-width: 650px;
+      font-family: "Playfair Display",serif;
+      color: var(--purple-dark);
+      font-size: clamp(43px,5.3vw,68px);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -1.2px;
+      margin: 0 0 23px;
+    }
+
+    .hero-description {
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.9;
+      margin-bottom: 29px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-bottom: 32px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .hero-note-icon {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      background: white;
+      color: var(--pink-dark);
+      border-radius: 50%;
+      box-shadow: 0 6px 18px rgba(56,32,80,.08);
+      font-size: 18px;
+    }
+
+    .hero-visual {
+      position: relative;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 10px 10px 28px;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+      border-radius: 170px 170px 28px 28px;
+      border: 8px solid rgba(255,255,255,.95);
+      box-shadow: 0 25px 65px rgba(56,32,80,.16);
+    }
+
+    .hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .8s ease;
+    }
+
+    .hero-visual:hover .hero-image-wrap img {
+      transform: scale(1.045);
+    }
+
+    .hero-image-overlay {
+      position: absolute;
+      inset: 40% 0 0;
+      background: linear-gradient(transparent,rgba(45,25,57,.72));
+      pointer-events: none;
+    }
+
+    .hero-image-caption {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      right: 30px;
+      color: white;
+      z-index: 1;
+    }
+
+    .hero-image-caption span {
+      display: block;
+      color: #ffd9ef;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .hero-image-caption h2 {
+      font-family: "Playfair Display",serif;
+      font-size: 27px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .floating-note {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 14px 17px;
+      border: 1px solid rgba(255,255,255,.9);
+      border-radius: 17px;
+      background: rgba(255,255,255,.96);
+      box-shadow: var(--shadow);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .floating-note i {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 13px;
+      background: var(--pink-light);
+      color: var(--pink-dark);
+      font-size: 19px;
+    }
+
+    .floating-note strong {
+      display: block;
+      color: var(--purple-dark);
+      font-size: 12px;
+    }
+
+    .floating-note small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .note-top {
+      top: 100px;
+      left: -22px;
+    }
+
+    .note-bottom {
+      right: -12px;
+      bottom: 75px;
+      animation-delay: -2s;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* INTRO STRIP */
+
+    .intro-strip {
+      padding: 23px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: white;
+    }
+
+    .intro-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      padding: 8px 12px;
+      color: var(--purple-dark);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .intro-item i {
+      color: var(--pink-dark);
+      font-size: 19px;
+    }
+
+    /* ABOUT */
+
+    .about-section {
+      background: white;
+    }
+
+    .about-image-wrap {
+      position: relative;
+      padding: 0 20px 20px 0;
+    }
+
+    .about-image {
+      height: 465px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+
+    .about-image-wrap:hover img {
+      transform: scale(1.04);
+    }
+
+    .about-experience {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      max-width: 205px;
+      padding: 21px;
+      border: 5px solid white;
+      border-radius: 19px;
+      color: white;
+      background: linear-gradient(135deg,var(--pink-dark),var(--purple));
+      box-shadow: var(--shadow);
+    }
+
+    .about-experience i {
+      font-size: 25px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .about-experience strong {
+      display: block;
+      font-family: "Playfair Display",serif;
+      font-size: 21px;
+      line-height: 1.25;
+    }
+
+    .about-experience span {
+      display: block;
+      font-size: 11px;
+      opacity: .9;
+      margin-top: 6px;
+    }
+
+    .about-copy {
+      padding-left: 20px;
+    }
+
+    .about-copy .section-title {
+      margin-bottom: 20px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.95;
+      margin-bottom: 17px;
+    }
+
+    .about-points {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin: 25px 0 29px;
+    }
+
+    .about-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--purple-dark);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .about-point i {
+      color: var(--pink-dark);
+      font-size: 18px;
+    }
+
+    /* SERVICES */
+
+    .services-section {
+      background:
+        radial-gradient(ellipse at 0% 0%,rgba(239,99,172,.07),transparent 30%),
+        #fffafd;
+    }
+
+    .service-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: 0 8px 28px rgba(56,32,80,.045);
+      transition: transform .35s ease,box-shadow .35s ease,border-color .35s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: #e7c6e8;
+      box-shadow: 0 20px 45px rgba(76,39,94,.12);
+    }
+
+    .service-image {
+      position: relative;
+      height: 235px;
+      flex-shrink: 0;
+      overflow: hidden;
+      background: var(--pink-light);
+    }
+
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .65s ease;
+    }
+
+    .service-card:hover .service-image img {
+      transform: scale(1.07);
+    }
+
+    .service-number {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      display: grid;
+      place-items: center;
+      width: 39px;
+      height: 39px;
+      border-radius: 13px;
+      color: var(--purple-dark);
+      background: rgba(255,255,255,.94);
+      font-size: 12px;
+      font-weight: 800;
+      box-shadow: 0 5px 15px rgba(56,32,80,.1);
+    }
+
+    .service-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 1;
+      padding: 23px 22px 24px;
+    }
+
+    .service-tag {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 50px;
+      background: var(--purple-light);
+      color: var(--purple);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .service-content h3 {
+      font-family: "Playfair Display",serif;
+      color: var(--purple-dark);
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 11px;
+    }
+
+    .service-content p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.85;
+      margin-bottom: 19px;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      color: var(--pink-dark);
+      font-size: 12px;
+      font-weight: 800;
+      transition: gap .25s ease;
+    }
+
+    .service-link:hover {
+      gap: 13px;
+      color: var(--purple);
+    }
+
+    /* FEATURE BANNER */
+
+    .feature-section {
+      padding: 30px 0 95px;
+      background: #fffafd;
+    }
+
+    .feature-banner {
+      position: relative;
+      overflow: hidden;
+      padding: 55px 45px;
+      border-radius: 30px;
+      background: linear-gradient(115deg,var(--purple-dark),#5a347e 56%,#8b4d9e);
+      color: white;
+    }
+
+    .feature-banner::before,
+    .feature-banner::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .feature-banner::before {
+      width: 330px;
+      height: 330px;
+      right: -100px;
+      top: -170px;
+    }
+
+    .feature-banner::after {
+      width: 240px;
+      height: 240px;
+      right: 30px;
+      bottom: -170px;
+    }
+
+    .feature-banner h2 {
+      position: relative;
+      z-index: 1;
+      font-family: "Playfair Display",serif;
+      font-size: clamp(29px,4vw,43px);
+      line-height: 1.25;
+      margin-bottom: 15px;
+    }
+
+    .feature-banner p {
+      position: relative;
+      z-index: 1;
+      max-width: 570px;
+      color: rgba(255,255,255,.77);
+      font-size: 13px;
+      line-height: 1.9;
+      margin-bottom: 0;
+    }
+
+    .btn-light-custom {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 14px 23px;
+      border-radius: 50px;
+      background: white;
+      color: var(--purple-dark);
+      font-size: 12px;
+      font-weight: 800;
+      transition: all .3s ease;
+      white-space: nowrap;
+    }
+
+    .btn-light-custom:hover {
+      background: var(--pink-light);
+      transform: translateY(-3px);
+      color: var(--purple-dark);
+    }
+
+    /* DIFFERENCE */
+
+    .difference-section {
+      background: white;
+    }
+
+    .difference-card {
+      height: 100%;
+      padding: 28px 23px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: white;
+      transition: transform .3s ease,box-shadow .3s ease;
+    }
+
+    .difference-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .difference-icon {
+      display: grid;
+      place-items: center;
+      width: 54px;
+      height: 54px;
+      border-radius: 17px;
+      margin-bottom: 20px;
+      background: var(--pink-light);
+      color: var(--pink-dark);
+      font-size: 23px;
+    }
+
+    .difference-card:nth-child(even) .difference-icon {
+      background: var(--purple-light);
+      color: var(--purple);
+    }
+
+    .difference-card h3 {
+      font-family: "Playfair Display",serif;
+      color: var(--purple-dark);
+      font-size: 21px;
+      margin-bottom: 11px;
+    }
+
+    .difference-card p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+      margin-bottom: 0;
+    }
+
+    /* PROCESS */
+
+    .process-section {
+      background: linear-gradient(135deg,#fff7fc,#f8f3ff);
+    }
+
+    .process-card {
+      height: 100%;
+      padding: 26px 21px;
+      border-radius: 20px;
+      border: 1px solid rgba(240,227,241,.95);
+      background: rgba(255,255,255,.82);
+      text-align: center;
+      transition: transform .3s ease;
+    }
+
+    .process-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .process-number {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 18px;
+      border-radius: 18px;
+      background: linear-gradient(135deg,var(--pink),var(--purple));
+      color: white;
+      font-family: "Playfair Display",serif;
+      font-size: 21px;
+      font-weight: 700;
+      box-shadow: 0 8px 18px rgba(120,72,199,.17);
+    }
+
+    .process-card h3 {
+      font-family: "Playfair Display",serif;
+      color: var(--purple-dark);
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.85;
+      margin-bottom: 0;
+    }
+
+    /* CONTACT */
+
+    .contact-section {
+      padding: 85px 0;
+      background: white;
+    }
+
+    .contact-box {
+      position: relative;
+      overflow: hidden;
+      padding: 58px 30px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 100% 0%,rgba(120,72,199,.10),transparent 35%),
+        radial-gradient(circle at 0% 100%,rgba(239,99,172,.11),transparent 35%),
+        var(--cream);
+      text-align: center;
+    }
+
+    .contact-box .section-title {
+      max-width: 700px;
+      margin: 0 auto 18px;
+    }
+
+    .contact-box p {
+      max-width: 590px;
+      margin: 0 auto 27px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .contact-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+      padding: 65px 0 22px;
+      background: #2f1d3d;
+      color: rgba(255,255,255,.76);
+    }
+
+    .footer-brand {
+      display: inline-flex;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .footer-brand .brand-caption {
+      color: rgba(255,255,255,.6);
+    }
+
+    .footer-description {
+      max-width: 340px;
+      color: rgba(255,255,255,.64);
+      font-size: 12px;
+      line-height: 1.95;
+    }
+
+    .footer-heading {
+      color: white;
+      font-family: "Playfair Display",serif;
+      font-size: 19px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 11px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,.68);
+      font-size: 12px;
+      transition: color .25s ease;
+    }
+
+    .footer-links a:hover {
+      color: #ff9fd2;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      margin-bottom: 15px;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer-contact-item i {
+      color: #ff9fd2;
+      font-size: 17px;
+      margin-top: 2px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 45px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.13);
+      color: rgba(255,255,255,.55);
+      font-size: 11px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 9px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.08);
+      color: white;
+      transition: all .25s ease;
+    }
+
+    .social-links a:hover {
+      background: var(--pink-dark);
+      transform: translateY(-3px);
+    }
+
+    /* FLOATING BUTTONS */
+
+    .whatsapp-float,
+    .back-to-top {
+      position: fixed;
+      z-index: 999;
+      display: grid;
+      place-items: center;
+      width: 49px;
+      height: 49px;
+      border: 0;
+      border-radius: 50%;
+      color: white;
+      box-shadow: 0 8px 25px rgba(56,32,80,.2);
+      transition: transform .25s ease,opacity .25s ease;
+    }
+
+    .whatsapp-float {
+      right: 22px;
+      bottom: 23px;
+      background: #25d366;
+      font-size: 24px;
+    }
+
+    .back-to-top {
+      right: 22px;
+      bottom: 83px;
+      background: linear-gradient(135deg,var(--pink-dark),var(--purple));
+      font-size: 19px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .whatsapp-float:hover,
+    .back-to-top:hover {
+      transform: translateY(-4px);
+      color: white;
+    }
+
+    /* SCROLL REVEAL */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease,transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 991.98px) {
+      .section-space {
+        padding: 75px 0;
+      }
+
+      .navbar-collapse {
+        padding: 15px 0 5px;
+      }
+
+      .navbar .nav-link {
+        padding: 11px 5px !important;
+      }
+
+      .navbar .nav-link::after {
+        display: none;
+      }
+
+      .navbar .navbar-cta {
+        margin-top: 10px;
+        width: fit-content;
+      }
+
+      .hero {
+        padding: 55px 0 70px;
+      }
+
+      .hero-content {
+        padding-right: 0;
+        margin-bottom: 35px;
+      }
+
+      .hero-visual {
+        max-width: 470px;
+      }
+
+      .hero-image-wrap {
+        height: 450px;
+      }
+
+      .about-copy {
+        padding-left: 0;
+        margin-top: 35px;
+      }
+
+      .feature-banner {
+        padding: 42px 30px;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .section-space {
+        padding: 62px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 32px;
+      }
+
+      .hero {
+        padding: 42px 0 55px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+        letter-spacing: -.7px;
+      }
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+      .hero-actions a {
+        flex: 1 1 100%;
+      }
+
+      .hero-image-wrap {
+        height: 390px;
+        border-radius: 140px 140px 24px 24px;
+      }
+
+      .hero-image-caption {
+        left: 21px;
+        right: 21px;
+        bottom: 23px;
+      }
+
+      .hero-image-caption h2 {
+        font-size: 23px;
+      }
+
+      .floating-note {
+        padding: 10px 12px;
+      }
+
+      .floating-note i {
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+      }
+
+      .floating-note strong {
+        font-size: 10px;
+      }
+
+      .floating-note small {
+        font-size: 9px;
+      }
+
+      .note-top {
+        left: -4px;
+        top: 85px;
+      }
+
+      .note-bottom {
+        right: -4px;
+        bottom: 54px;
+      }
+
+      .intro-item {
+        justify-content: flex-start;
+        font-size: 11px;
+      }
+
+      .about-image {
+        height: 350px;
+      }
+
+      .about-points {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .service-image {
+        height: 225px;
+      }
+
+      .feature-section {
+        padding-bottom: 62px;
+      }
+
+      .feature-banner {
+        padding: 34px 23px;
+        border-radius: 23px;
+      }
+
+      .feature-banner .btn-light-custom {
+        margin-top: 24px;
+      }
+
+      .contact-box {
+        padding: 40px 20px;
+      }
+
+      .contact-actions a {
+        width: 100%;
+      }
+
+      .site-footer {
+        padding-top: 48px;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar navbar-expand-lg sticky-top" id="mainNavbar">
+    <div class="container">
+
+      <a class="navbar-brand" href="index.html" aria-label="Event Sphere homepage">
+        <span class="brand-mark"><i class="bi bi-stars"></i></span>
+        <span>
+          <span class="brand-name">Event Sphere</span>
+          <span class="brand-caption">Events • Elegance • Memories</span>
+        </span>
+      </a>
+
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+        aria-controls="navbarMenu" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="bi bi-list fs-3" style="color:var(--purple-dark)"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="corporate-events.html">Corporate Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="about us .html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="our servicess2.html">Our Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="exibition.html">Exhibitions</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact us.html">Contact</a></li>
+        </ul>
+
+        <a href="contact us.html" class="btn-primary-custom navbar-cta ms-lg-3">
+          Plan Your Event <i class="bi bi-arrow-up-right"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+
+        <div class="col-lg-6">
+          <div class="hero-content reveal">
+            <span class="eyebrow">Thoughtfully Planned. Beautifully Remembered.</span>
+
+            <h1>
+              Every Occasion Deserves a
+              <span class="gradient-text">Beautiful Story.</span>
+            </h1>
+
+            <p class="hero-description">
+              From intimate celebrations to grand occasions, Event Sphere
+              transforms your ideas into beautifully planned experiences
+              filled with thoughtful details, elegant styling and unforgettable moments.
+            </p>
+
+            <div class="hero-actions">
+              <a href="contact us.html" class="btn-primary-custom">
+                <i class="bi bi-calendar-heart"></i> Plan Your Celebration
+              </a>
+              <a href="#events" class="btn-outline-custom">
+                Explore Our Events <i class="bi bi-arrow-down-right"></i>
+              </a>
+            </div>
+
+            <div class="hero-note">
+              <span class="hero-note-icon"><i class="bi bi-heart"></i></span>
+              <span>Personalised planning. Beautiful details. Memorable experiences.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="hero-visual reveal">
+            <div class="hero-image-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1100&q=85"
+                alt="Beautifully arranged event venue"
+                fetchpriority="high">
+              <div class="hero-image-overlay"></div>
+              <div class="hero-image-caption">
+                <span>The Art of Celebration</span>
+                <h2>Made With Love, Styled With Elegance.</h2>
+              </div>
+            </div>
+
+            <div class="floating-note note-top">
+              <i class="bi bi-magic"></i>
+              <span>
+                <strong>Thoughtful Details</strong>
+                <small>Designed around you</small>
+              </span>
+            </div>
+
+            <div class="floating-note note-bottom">
+              <i class="bi bi-balloon-heart"></i>
+              <span>
+                <strong>Your Vision, Our Creativity</strong>
+                <small>Every occasion matters</small>
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- INTRO STRIP -->
+  <section class="intro-strip" aria-label="Our planning approach">
+    <div class="container">
+      <div class="row g-2">
+        <div class="col-6 col-lg-3">
+          <div class="intro-item"><i class="bi bi-palette2"></i><span>Creative Event Styling</span></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="intro-item"><i class="bi bi-calendar2-check"></i><span>Thoughtful Planning</span></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="intro-item"><i class="bi bi-stars"></i><span>Personalised Concepts</span></div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="intro-item"><i class="bi bi-heart"></i><span>Memories That Matter</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section section-space" id="about">
+    <div class="container">
+      <div class="row align-items-center g-lg-5">
+
+        <div class="col-lg-6">
+          <div class="about-image-wrap reveal">
+            <div class="about-image">
+              <img
+                src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1000&q=85"
+                alt="Elegant event table and decorations"
+                loading="lazy">
+            </div>
+            <div class="about-experience">
+              <i class="bi bi-flower1"></i>
+              <strong>Beautifully Planned, Personally Yours.</strong>
+              <span>Thoughtful experiences for meaningful occasions.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="about-copy reveal">
+            <span class="eyebrow">A Little About Us</span>
+            <h2 class="section-title">
+              We Create Moments That Feel
+              <span class="gradient-text">Like You.</span>
+            </h2>
+
+            <p>
+              At Event Sphere, we believe every celebration has a story worth
+              telling. We bring together creativity, thoughtful coordination
+              and beautiful styling to make each occasion personal and meaningful.
+            </p>
+
+            <p>
+              Whether you are planning a wedding, birthday, family gathering
+              or professional event, we help turn your ideas into a celebration
+              that reflects your vision and style.
+            </p>
+
+            <div class="about-points">
+              <div class="about-point"><i class="bi bi-check-circle-fill"></i><span>Personalised Event Concepts</span></div>
+              <div class="about-point"><i class="bi bi-check-circle-fill"></i><span>Creative Styling & Decor</span></div>
+              <div class="about-point"><i class="bi bi-check-circle-fill"></i><span>Organised Planning</span></div>
+              <div class="about-point"><i class="bi bi-check-circle-fill"></i><span>Attention to Detail</span></div>
+            </div>
+
+            <a href="about us .html" class="btn-primary-custom">
+              Discover Our Story <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENT CATEGORIES -->
+  <section class="services-section section-space" id="events">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span class="eyebrow">Our Event Experiences</span>
+        <h2 class="section-title">
+          Your Occasion, Our
+          <span class="gradient-text">Creative Touch.</span>
+        </h2>
+        <p class="section-description">
+          Every event is different. Explore our celebration categories
+          and discover how Event Sphere can help make your next occasion special.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- 01 WEDDINGS -->
+        <div class="col-sm-6 col-lg-4 reveal">
+          <article class="service-card">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80" alt="Wedding reception setup" loading="lazy">
+              <span class="service-number">01</span>
+            </div>
+            <div class="service-content">
+              <span class="service-tag">Timeless Celebrations</span>
+              <h3>Weddings & Receptions</h3>
+              <p>Thoughtfully styled wedding celebrations, beautiful reception settings and carefully coordinated details for your special day.</p>
+              <a href="our services.html" class="service-link">Explore Weddings <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- 02 BIRTHDAYS -->
+        <div class="col-sm-6 col-lg-4 reveal">
+          <article class="service-card">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80" alt="Colourful birthday party decorations" loading="lazy">
+              <span class="service-number">02</span>
+            </div>
+            <div class="service-content">
+              <span class="service-tag">Made to Celebrate</span>
+              <h3>Birthday Parties</h3>
+              <p>Celebrate another wonderful year with creative themes, colourful decorations, party backdrops and personalised celebration details.</p>
+              <a href="our services.html" class="service-link">Explore Birthdays <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- 03 BRIDAL SHOWERS -->
+        <div class="col-sm-6 col-lg-4 reveal">
+          <article class="service-card">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=800&q=80" alt="Intimate celebration decorations" loading="lazy">
+              <span class="service-number">03</span>
+            </div>
+            <div class="service-content">
+              <span class="service-tag">Elegant & Intimate</span>
+              <h3>Bridal Showers</h3>
+              <p>Charming backdrops, delicate floral touches and lovely styling for a memorable celebration with family and friends.</p>
+              <a href="our services.html" class="service-link">Explore Bridal Showers <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- 04 BABY SHOWERS -->
+        <div class="col-sm-6 col-lg-4 reveal">
+          <article class="service-card">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80" alt="Pastel celebration details" loading="lazy">
+              <span class="service-number">04</span>
+            </div>
+            <div class="service-content">
+              <span class="service-tag">Sweet Beginnings</span>
+              <h3>Baby Showers</h3>
+              <p>Soft colour palettes, adorable decorative details and welcoming setups to celebrate a beautiful new beginning.</p>
+              <a href="our services.html" class="service-link">Explore Baby Showers <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- 05 CORPORATE EVENTS -->
+        <div class="col-sm-6 col-lg-4 reveal">
+          <article class="service-card">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Corporate conference and event venue" loading="lazy">
+              <span class="service-number">05</span>
+            </div>
+            <div class="service-content">
+              <span class="service-tag">Professional Gatherings</span>
+              <h3>Corporate Events</h3>
+              <p>Business gatherings, conferences, brand celebrations and professional event environments designed around your objectives.</p>
+              <a href="corporate-events.html" class="service-link">Explore Corporate Events <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- 06 CULTURAL FESTIVALS -->
+        <div class="col-sm-6 col-lg-4 reveal">
+          <article class="service-card">
+            <div class="service-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeynbfqMzqkvw3qyElRxClSWkmPLL4GWuhP4vBxfsSPYIL2qVYc0LB9aY&s=10"
+     alt="Colourful outdoor festival and live event"
+     loading="lazy">
+            </div>
+            <div class="service-content">
+              <span class="service-tag">Culture & Community</span>
+              <h3>Cultural Festivals</h3>
+              <p>Vibrant cultural gatherings with thoughtful decor, welcoming spaces and celebration details inspired by local traditions.</p>
+              <a href="our services.html" class="service-link">Explore Festivals <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- 07 TRADE SHOWS -->
+        <div class="col-sm-6 col-lg-4 reveal">
+          <article class="service-card">
+            <div class="service-image">
+    <img src="https://thehustle.co/hubfs/The%20Hustle/Assets/Images/1119662498-SXSW-Trade-Show-2018-photo-by-merrick-ales-1439x810-1-1.webp"
+         alt="Trade show and exhibition venue"
+         loading="lazy">
+
+              <span class="service-number">07</span>
+            </div>
+            <div class="service-content">
+              <span class="service-tag">Brands & Business</span>
+              <h3>Trade Shows & Exhibitions</h3>
+              <p>Exhibition spaces, product displays and brand-focused event setups that help businesses present their ideas professionally.</p>
+              <a href="exibition.html" class="service-link">Explore Exhibitions <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- 08 PRIVATE EVENTS -->
+        <div class="col-sm-6 col-lg-4 reveal">
+          <article class="service-card">
+            <div class="service-image">
+              <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" alt="Private celebration with elegant event lighting" loading="lazy">
+              <span class="service-number">08</span>
+            </div>
+            <div class="service-content">
+              <span class="service-tag">Personal & Memorable</span>
+              <h3>Private Events</h3>
+              <p>From family gatherings to intimate dinners and special celebrations, we create a personal, welcoming atmosphere.</p>
+              <a href="our services.html" class="service-link">Explore Private Events <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- 09 INDEPENDENCE DAY -->
+        <div class="col-sm-6 col-lg-4 reveal">
+          <article class="service-card">
+          <div class="service-image">
+    <img src="https://marcem.com.pk/wp-content/uploads/2025/08/14-August.webp"
+         alt="14 August Pakistan Independence Day celebration"
+         loading="lazy">
+
+              <span class="service-number">09</span>
+            </div>
+            <div class="service-content">
+              <span class="service-tag">Celebrate Together</span>
+              <h3>14 August Celebrations</h3>
+              <p>Patriotic decor, green-and-white styling, celebration backdrops and event arrangements for Pakistan's Independence Day.</p>
+              <a href="our services.html" class="service-link">Explore Celebrations <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-5 reveal">
+        <a href="our servicess2.html" class="btn-outline-custom">
+          View All Services <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURE BANNER -->
+  <section class="feature-section">
+    <div class="container">
+      <div class="feature-banner reveal">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <h2>Not Just an Event.<br>A Feeling Worth Remembering.</h2>
+            <p>
+              Tell us what you are celebrating, share your ideas and let
+              Event Sphere help you explore the details that bring your occasion to life.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a href="contact us.html" class="btn-light-custom">
+              Let's Plan Together <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="difference-section section-space" id="why-us">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span class="eyebrow">The Event Sphere Difference</span>
+        <h2 class="section-title">
+          The Little Details Make
+          <span class="gradient-text">The Biggest Difference.</span>
+        </h2>
+        <p class="section-description">
+          A thoughtful event experience begins with understanding your vision
+          and giving every detail the attention it deserves.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3 reveal">
+          <article class="difference-card">
+            <div class="difference-icon"><i class="bi bi-palette2"></i></div>
+            <h3>Creative Concepts</h3>
+            <p>We shape your ideas into visual concepts that suit your occasion, style and preferences.</p>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-3 reveal">
+          <article class="difference-card">
+            <div class="difference-icon"><i class="bi bi-chat-heart"></i></div>
+            <h3>Personal Approach</h3>
+            <p>Your occasion and preferences guide the planning process from the first conversation to the final details.</p>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-3 reveal">
+          <article class="difference-card">
+            <div class="difference-icon"><i class="bi bi-list-check"></i></div>
+            <h3>Organised Planning</h3>
+            <p>A clear plan helps bring together event details, styling decisions and arrangements smoothly.</p>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-3 reveal">
+          <article class="difference-card">
+            <div class="difference-icon"><i class="bi bi-stars"></i></div>
+            <h3>Attention to Detail</h3>
+            <p>From the overall atmosphere to the finishing touches, we care about every part of your event.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="process-section section-space" id="process">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span class="eyebrow">Simple & Thoughtful</span>
+        <h2 class="section-title">
+          From Your Idea to
+          <span class="gradient-text">Your Special Day.</span>
+        </h2>
+        <p class="section-description">
+          Our simple planning approach helps you move from inspiration
+          to a celebration shaped around your vision.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3 reveal">
+          <article class="process-card">
+            <div class="process-number">01</div>
+            <h3>Let's Talk</h3>
+            <p>Tell us about your occasion, preferred date, ideas and the atmosphere you have in mind.</p>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-3 reveal">
+          <article class="process-card">
+            <div class="process-number">02</div>
+            <h3>Plan the Details</h3>
+            <p>Discuss the theme, styling, arrangements and budget that work for your celebration.</p>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-3 reveal">
+          <article class="process-card">
+            <div class="process-number">03</div>
+            <h3>Bring It Together</h3>
+            <p>Finalise the agreed event details and preparations for your special occasion.</p>
+          </article>
+        </div>
+
+        <div class="col-sm-6 col-lg-3 reveal">
+          <article class="process-card">
+            <div class="process-number">04</div>
+            <h3>Make Memories</h3>
+            <p>Enjoy your celebration and the meaningful moments that make the occasion special.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-box reveal">
+        <span class="eyebrow">Let's Create Something Beautiful</span>
+        <h2 class="section-title">
+          Have a Celebration in Mind?
+          <span class="gradient-text">Let's Make It Special.</span>
+        </h2>
+        <p>
+          Whether you already have a complete plan or just a little inspiration,
+          we'd love to hear about your event. Get in touch to discuss your ideas.
+        </p>
+
+        <div class="contact-actions">
+          <a href="contact us.html" class="btn-primary-custom">
+            Discuss Your Event <i class="bi bi-arrow-up-right"></i>
+          </a>
+          <a href="our servicess2.html" class="btn-outline-custom">
+            Explore Our Services <i class="bi bi-stars"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5">
+
+        <div class="col-lg-5 col-md-6">
+          <a class="footer-brand" href="index.html">
+            <span class="brand-mark"><i class="bi bi-stars"></i></span>
+            <span>
+              <span class="brand-name">Event Sphere</span>
+              <span class="brand-caption">Events • Elegance • Memories</span>
+            </span>
+          </a>
+
+          <p class="footer-description">
+            Thoughtfully planned celebrations, creative event styling
+            and meaningful experiences for the moments that matter.
+            Let's create something beautiful together.
+          </p>
+
+          <div class="social-links">
+            <!-- Replace # with your actual social profile URLs -->
+            <a href="#" aria-label="Instagram" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="Facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="TikTok" title="TikTok"><i class="bi bi-tiktok"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-lg-2 col-md-6">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about us .html">About Us</a></li>
+            <li><a href="our servicess2.html">Our Services</a></li>
+            <li><a href="#events">Our Events</a></li>
+            <li><a href="contact us.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2 col-md-6">
+          <h3 class="footer-heading">Our Events</h3>
+          <ul class="footer-links">
+            <li><a href="our services.html">Weddings</a></li>
+            <li><a href="our services.html">Birthdays</a></li>
+            <li><a href="our services.html">Bridal Showers</a></li>
+            <li><a href="corporate-events.html">Corporate Events</a></li>
+            <li><a href="exibition.html">Exhibitions</a></li>
+            <li><a href="our services.html">Private Events</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h3 class="footer-heading">Get in Touch</h3>
+
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>Karachi, Pakistan</span>
+          </div>
+
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope"></i>
+            <a href="contact us.html" style="color:inherit">Contact us for event enquiries</a>
+          </div>
+
+          <div class="footer-contact-item">
+            <i class="bi bi-calendar-heart"></i>
+            <span>Let's discuss your upcoming celebration.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>
+          &copy; <span id="currentYear"></span> Event Sphere. All rights reserved.
+        </span>
+        <span>Created with <i class="bi bi-heart-fill" style="color:#ff9fd2"></i> for beautiful celebrations.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP -->
+  <!-- IMPORTANT: Replace this example number with your real WhatsApp number -->
+  <a
+    href="https://wa.me/923001234567"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contact Event Sphere on WhatsApp"
+    title="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Navbar shadow and back-to-top visibility
+    const navbar = document.getElementById("mainNavbar");
+    const backToTop = document.getElementById("backToTop");
+
+    function handleScroll() {
+      const scrolled = window.scrollY > 30;
+      navbar.classList.toggle("scrolled", scrolled);
+      backToTop.classList.toggle("show", window.scrollY > 350);
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    // Back-to-top action
+    backToTop.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+    // Reveal animation
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        function (entries, currentObserver) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              currentObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -35px 0px"
+        }
+      );
+
+      revealElements.forEach(function (element) {
+        observer.observe(element);
+      });
+    } else {
+      revealElements.forEach(function (element) {
+        element.classList.add("visible");
+      });
+    }
+
+    // Close mobile menu after selecting a navigation link
+    document.querySelectorAll("#navbarMenu .nav-link").forEach(function (link) {
+      link.addEventListener("click", function () {
+        const menu = document.getElementById("navbarMenu");
+
+        if (menu.classList.contains("show")) {
+          bootstrap.Collapse.getOrCreateInstance(menu).hide();
+        }
+      });
+    });
+
+    // Current year
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>

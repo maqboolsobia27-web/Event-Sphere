@@ -1,0 +1,1372 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff8fc">
+
+  <title>Exhibitions & Trade Shows | Event Shpare</title>
+  <meta name="description" content="Explore exhibition planning, trade show displays, branded booths, product showcases and professional exhibition event coordination with Event Shpare.">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #ef63ac;
+      --pink-dark: #d94696;
+      --pink-light: #fff0f8;
+      --purple: #7848c7;
+      --purple-dark: #382050;
+      --purple-light: #f3edff;
+      --cream: #fff8fc;
+      --white: #ffffff;
+      --text: #594c61;
+      --muted: #887b91;
+      --border: #f0e3f1;
+      --shadow: 0 18px 50px rgba(76, 39, 94, 0.09);
+      --radius: 22px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .section-space {
+      padding: 95px 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--pink-dark);
+      background: var(--pink-light);
+      padding: 8px 15px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--purple);
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      color: var(--purple-dark);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 610px;
+      margin: 0 auto;
+      font-size: 15px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(110deg, var(--pink-dark), var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* NAVBAR */
+
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(240, 227, 241, 0.8);
+      padding: 15px 0;
+      transition: box-shadow 0.3s ease, padding 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      box-shadow: 0 8px 30px rgba(56, 32, 80, 0.08);
+      padding: 10px 0;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--purple-dark);
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border-radius: 15px;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      color: var(--white);
+      font-size: 23px;
+      box-shadow: 0 8px 20px rgba(217, 70, 150, 0.2);
+    }
+
+    .brand-name {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    .brand-caption {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+    }
+
+    .navbar .nav-link {
+      position: relative;
+      padding: 10px 13px !important;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+      transition: color 0.25s ease;
+    }
+
+    .navbar .nav-link:hover,
+    .navbar .nav-link.active {
+      color: var(--pink-dark);
+    }
+
+    .navbar .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: 3px;
+      left: 13px;
+      width: 0;
+      height: 2px;
+      background: var(--pink);
+      transition: width 0.25s ease;
+    }
+
+    .navbar .nav-link:hover::after,
+    .navbar .nav-link.active::after {
+      width: calc(100% - 26px);
+    }
+
+    .btn-primary-custom,
+    .btn-outline-custom {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 49px;
+      padding: 13px 23px;
+      border-radius: 50px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary-custom {
+      border: 1px solid transparent;
+      background: linear-gradient(110deg, var(--pink-dark), var(--purple));
+      color: var(--white);
+      box-shadow: 0 10px 24px rgba(120, 72, 199, 0.2);
+    }
+
+    .btn-primary-custom:hover {
+      color: var(--white);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(120, 72, 199, 0.27);
+    }
+
+    .btn-outline-custom {
+      color: var(--purple-dark);
+      border: 1px solid #e6d7ee;
+      background: var(--white);
+    }
+
+    .btn-outline-custom:hover {
+      color: var(--pink-dark);
+      border-color: var(--pink);
+      transform: translateY(-3px);
+    }
+
+    .navbar-toggler {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 8px 11px;
+      box-shadow: none !important;
+    }
+
+    .hero {
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 90px 0;
+      background:
+        linear-gradient(100deg, rgba(39,19,54,.88), rgba(66,31,87,.56)),
+        url("https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=2000&q=85")
+        center / cover no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 430px;
+      height: 430px;
+      border: 1px solid rgba(255,255,255,.20);
+      border-radius: 50%;
+      right: -160px;
+      bottom: -220px;
+      box-shadow: 0 0 0 45px rgba(255,255,255,.035),
+                  0 0 0 90px rgba(255,255,255,.025);
+    }
+
+    .hero-content {
+      max-width: 800px;
+      position: relative;
+      z-index: 1;
+      animation: fadeUp .8s ease both;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 15px;
+      border-radius: 50px;
+      background: #ffebf6;
+      color: var(--pink-dark);
+      font-size: .81rem;
+      font-weight: 800;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    .hero .eyebrow {
+      background: rgba(255,255,255,.14);
+      color: white;
+      border: 1px solid rgba(255,255,255,.24);
+    }
+
+    .hero h1 {
+      color: white;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.13;
+      margin: 24px 0;
+    }
+
+    .hero h1 span {
+      color: #ffb9df;
+      font-style: italic;
+    }
+
+    .hero p {
+      max-width: 670px;
+      color: rgba(255,255,255,.88);
+      font-size: 1.06rem;
+      line-height: 1.9;
+      margin-bottom: 29px;
+    }
+
+    .breadcrumb-line {
+      color: rgba(255,255,255,.8);
+      font-size: .9rem;
+    }
+
+    .breadcrumb-line a {
+      color: #ffb9df;
+    }
+
+    .section-space {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      max-width: 740px;
+      text-align: center;
+      margin: 0 auto 45px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.2;
+      margin: 15px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 0;
+    }
+
+    .gradient-text {
+      background: linear-gradient(120deg, var(--pink-dark), var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .intro-section {
+      background: #fffafd;
+    }
+
+    .intro-photo-wrap {
+      position: relative;
+      padding: 0 18px 18px 0;
+    }
+
+    .intro-photo {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      border-radius: 23px;
+      box-shadow: var(--shadow);
+    }
+
+    .floating-note {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      max-width: 225px;
+      padding: 20px;
+      border-radius: 18px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .floating-note i {
+      color: var(--pink-dark);
+      font-size: 1.7rem;
+    }
+
+    .floating-note strong {
+      display: block;
+      color: var(--purple-dark);
+      margin: 7px 0 4px;
+    }
+
+    .floating-note span {
+      font-size: .85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .intro-copy h2 {
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      line-height: 1.2;
+      margin: 18px 0;
+    }
+
+    .intro-copy p {
+      color: var(--muted);
+      line-height: 1.95;
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 23px 0 28px;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      margin: 13px 0;
+      font-weight: 600;
+    }
+
+    .check-list i {
+      color: var(--pink-dark);
+      font-size: 1.15rem;
+      margin-top: 2px;
+    }
+
+    .services-section {
+      background: linear-gradient(180deg, #fff3fa, #fffafd);
+    }
+
+    .service-card {
+      height: 100%;
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid rgba(120,72,199,.09);
+      background: white;
+      box-shadow: 0 8px 28px rgba(56,32,80,.055);
+      transition: transform .35s, box-shadow .35s, border-color .35s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-9px);
+      box-shadow: 0 20px 45px rgba(91,48,110,.13);
+      border-color: rgba(239,99,172,.4);
+    }
+
+    .service-image-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-image {
+      width: 100%;
+      height: 235px;
+      object-fit: cover;
+      transition: transform .6s;
+    }
+
+    .service-card:hover .service-image {
+      transform: scale(1.07);
+    }
+
+    .service-tag {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      color: white;
+      font-size: .77rem;
+      font-weight: 800;
+      padding: 8px 13px;
+      border-radius: 50px;
+    }
+
+    .service-content {
+      padding: 25px;
+    }
+
+    .service-icon {
+      width: 49px;
+      height: 49px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: #f3e8ff;
+      color: var(--purple);
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      transition: .3s;
+    }
+
+    .service-card:hover .service-icon {
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      color: white;
+    }
+
+    .service-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .service-content p {
+      font-size: .94rem;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--pink-dark);
+      font-weight: 800;
+      transition: gap .3s;
+    }
+
+    .service-link:hover {
+      gap: 13px;
+      color: var(--purple);
+    }
+
+    .feature-section {
+      background: white;
+    }
+
+    .feature-card {
+      height: 100%;
+      padding: 29px 25px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: #fffafd;
+      transition: .3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-icon {
+      display: grid;
+      place-items: center;
+      width: 57px;
+      height: 57px;
+      border-radius: 17px;
+      background: linear-gradient(135deg, #ffe3f2, #eee1ff);
+      color: var(--purple);
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      font-size: .94rem;
+      line-height: 1.85;
+      margin: 0;
+    }
+
+    .process-section {
+      background: #fff4fa;
+    }
+
+    .process-card {
+      height: 100%;
+      padding: 27px 20px;
+      text-align: center;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      transition: .3s;
+    }
+
+    .process-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .process-icon {
+      display: grid;
+      place-items: center;
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 17px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffe3f2, #eee1ff);
+      color: var(--purple);
+      font-size: 1.55rem;
+    }
+
+    .step-number {
+      color: var(--pink-dark);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: 1.3px;
+    }
+
+    .process-card h3 {
+      font-size: 1.35rem;
+      margin: 10px 0;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: .92rem;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .cta-section {
+      padding: 80px 0;
+      background:
+        linear-gradient(120deg, rgba(56,32,80,.95), rgba(120,72,199,.90)),
+        url("https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1600&q=80")
+        center / cover;
+    }
+
+    .cta-inner {
+      max-width: 780px;
+      text-align: center;
+      margin: auto;
+    }
+
+    .cta-inner h2 {
+      color: white;
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      margin: 18px 0;
+    }
+
+    .cta-inner p {
+      color: rgba(255,255,255,.85);
+      line-height: 1.9;
+      margin-bottom: 28px;
+    }
+
+    .cta-inner .btn-main {
+      background: white;
+      color: var(--purple-dark);
+    }
+
+    .footer {
+      background: #241331;
+      color: rgba(255,255,255,.72);
+      padding: 55px 0 20px;
+    }
+
+    .footer-brand {
+      display: inline-block;
+      color: white;
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .footer p {
+      font-size: .92rem;
+      line-height: 1.9;
+    }
+
+    .footer h5 {
+      color: white;
+      font-family: "DM Sans", sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin: 12px 0;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,.72);
+      transition: .3s;
+    }
+
+    .footer-links a:hover {
+      color: #ff9bd2;
+      padding-left: 4px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: rgba(255,255,255,.1);
+      border-radius: 50%;
+      transition: .3s;
+    }
+
+    .social-links a:hover {
+      background: var(--pink-dark);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.13);
+      font-size: .85rem;
+    }
+
+    .back-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 999;
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      color: white;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      box-shadow: var(--shadow);
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s;
+    }
+
+    .back-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 991px) {
+      .navbar-nav {
+        padding: 15px 0;
+      }
+
+      .hero {
+        min-height: 470px;
+        padding: 75px 0;
+      }
+
+      .section-space {
+        padding: 65px 0;
+      }
+
+      .intro-photo {
+        height: 360px;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .navbar-brand {
+        font-size: 1.4rem;
+      }
+
+      .hero {
+        min-height: 440px;
+      }
+
+      .hero p {
+        font-size: .98rem;
+      }
+
+      .service-image {
+        height: 210px;
+      }
+
+      .intro-photo {
+        height: 290px;
+      }
+
+      .floating-note {
+        max-width: 190px;
+        padding: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+   <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top" id="mainNavbar">
+    <div class="container">
+
+      <a class="navbar-brand" href="index.html" aria-label="The Gloom Hour homepage">
+        <span class="brand-mark"><i class="bi bi-stars"></i></span>
+        <span>
+          <span class="brand-name">The Gloom Hour</span>
+          <span class="brand-caption">Events • Elegance • Memories</span>
+        </span>
+      </a>
+
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+        aria-controls="navbarMenu" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="bi bi-list fs-3" style="color: var(--purple-dark);"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="corporate-events.html">Corporate Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about us .html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="our servicess2.html">Our Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="exibition.html">Exhibition</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact us.html">Contact</a>
+          </li>
+        </ul>
+
+        <a href="contact us.html" class="btn-primary-custom navbar-cta ms-lg-3">
+          Plan Your Event <i class="bi bi-arrow-up-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">
+          <i class="bi bi-buildings"></i> Exhibitions & Trade Shows
+        </span>
+
+        <h1>Ideas on Display.<br><span>Experiences That Connect.</span></h1>
+
+        <p>
+          Create a professional presence with thoughtfully planned exhibition
+          spaces, trade show displays and product showcases. From your first
+          concept to event-day coordination, explore possibilities for your
+          next exhibition.
+        </p>
+
+        <div class="d-flex flex-wrap gap-3">
+          <a href="contact us.html" class="btn-main">
+            Discuss Your Exhibition <i class="bi bi-arrow-up-right"></i>
+          </a>
+          <a href="#exhibition-services" class="btn-light-outline">
+            Explore Services <i class="bi bi-arrow-down"></i>
+          </a>
+        </div>
+
+        <div class="breadcrumb-line mt-4">
+          <a href="index.html">Home</a>
+          <span class="mx-2">/</span>
+          <a href="our services.html">Our Services</a>
+          <span class="mx-2">/</span>
+          <span>Exhibitions</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- INTRODUCTION -->
+  <section class="section-space intro-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <div class="col-lg-6 reveal">
+          <div class="intro-photo-wrap">
+            <img
+              class="intro-photo"
+             src="https://www.pakistantoday.com.pk/uploads/Exhibition-Husn-e-Hunar-1779382073947-q6lsdl.jpg"
+              alt="Professional exhibition and conference venue"
+              loading="lazy">
+
+            <div class="floating-note">
+              <i class="bi bi-lightbulb"></i>
+              <strong>Your Vision, Your Space</strong>
+              <span>Exhibition concepts shaped around your goals.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal">
+          <div class="intro-copy">
+            <span class="eyebrow">Our Exhibition Expertise</span>
+
+            <h2>Make Your Brand<br><span class="gradient-text">Stand Out.</span></h2>
+
+            <p>
+              Exhibitions and trade shows bring brands, businesses, creators
+              and audiences together. A well-planned space can help present
+              your products, communicate your message and encourage visitors
+              to explore what you offer.
+            </p>
+
+            <p>
+              Event Shpare helps you explore exhibition concepts, booth
+              arrangements, display ideas, event layouts and coordination
+              options suited to your requirements.
+            </p>
+
+            <ul class="check-list">
+              <li><i class="bi bi-check-circle-fill"></i> Exhibition and trade show planning</li>
+              <li><i class="bi bi-check-circle-fill"></i> Booth layout and display concepts</li>
+              <li><i class="bi bi-check-circle-fill"></i> Product showcase and branding ideas</li>
+              <li><i class="bi bi-check-circle-fill"></i> Visitor flow and event coordination planning</li>
+            </ul>
+
+            <a href="contact us.html" class="btn-main">
+              Start Planning <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXHIBITION SERVICES -->
+  <section class="section-space services-section" id="exhibition-services">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span class="eyebrow">What We Can Help With</span>
+        <h2>Exhibition Services for <span class="gradient-text">Your Goals</span></h2>
+        <p>
+          Explore different elements of exhibition planning and choose the
+          services that fit your event, audience and brand.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- 1 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <article class="service-card">
+            <div class="service-image-wrap">
+              <img class="service-image"
+                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=850&q=85"
+                alt="Trade show and exhibition venue" loading="lazy">
+              <span class="service-tag">01 · Planning</span>
+            </div>
+            <div class="service-content">
+              <div class="service-icon"><i class="bi bi-calendar2-check"></i></div>
+              <h3>Exhibition Planning</h3>
+              <p>
+                Organize your exhibition concept, event requirements, schedule
+                and planning priorities with a clear starting point.
+              </p>
+              <a href="contact us.html" class="service-link">
+                Discuss Your Event <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- 2 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <article class="service-card">
+            <div class="service-image-wrap">
+              <img class="service-image"
+                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=850&q=85"
+                alt="Modern professional space with display areas" loading="lazy">
+              <span class="service-tag">02 · Design</span>
+            </div>
+            <div class="service-content">
+              <div class="service-icon"><i class="bi bi-grid-1x2"></i></div>
+              <h3>Exhibition Booths</h3>
+              <p>
+                Explore booth layouts, display zones and presentation ideas
+                that help your exhibition area communicate your brand.
+              </p>
+              <a href="contact us.html" class="service-link">
+                Discuss Your Event <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- 3 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <article class="service-card">
+            <div class="service-image-wrap">
+              <img class="service-image"
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=850&q=85"
+                alt="Business professionals discussing a product or project" loading="lazy">
+              <span class="service-tag">03 · Business</span>
+            </div>
+            <div class="service-content">
+              <div class="service-icon"><i class="bi bi-briefcase"></i></div>
+              <h3>Business Trade Shows</h3>
+              <p>
+                Plan professional trade show experiences for businesses,
+                suppliers, industry groups and potential customers.
+              </p>
+              <a href="contact us.html" class="service-link">
+                Discuss Your Event <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- 4 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <article class="service-card">
+            <div class="service-image-wrap">
+              <img class="service-image"
+                src="https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&w=850&q=85"
+                alt="Creative design workspace and presentation materials" loading="lazy">
+              <span class="service-tag">04 · Creativity</span>
+            </div>
+            <div class="service-content">
+              <div class="service-icon"><i class="bi bi-palette"></i></div>
+              <h3>Branding & Visual Displays</h3>
+              <p>
+                Explore signage, brand colours, graphic display concepts and
+                visual presentation ideas for your exhibition space.
+              </p>
+              <a href="contact us.html" class="service-link">
+                Discuss Your Event <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- 5 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <article class="service-card">
+            <div class="service-image-wrap">
+              <img class="service-image"
+                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=850&q=85"
+                alt="Organized indoor venue with modern work areas" loading="lazy">
+              <span class="service-tag">05 · Layout</span>
+            </div>
+            <div class="service-content">
+              <div class="service-icon"><i class="bi bi-signpost-split"></i></div>
+              <h3>Venue & Visitor Layouts</h3>
+              <p>
+                Consider booth positioning, walkways, information points and
+                visitor movement when planning your exhibition layout.
+              </p>
+              <a href="contact us.html" class="service-link">
+                Discuss Your Event <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- 6 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <article class="service-card">
+            <div class="service-image-wrap">
+              <img class="service-image"
+                src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=850&q=85"
+                alt="People attending an organized professional event" loading="lazy">
+              <span class="service-tag">06 · Coordination</span>
+            </div>
+            <div class="service-content">
+              <div class="service-icon"><i class="bi bi-people"></i></div>
+              <h3>Event-Day Coordination</h3>
+              <p>
+                Discuss schedules, exhibitor arrangements, setup priorities
+                and coordination requirements for your event day.
+              </p>
+              <a href="contact us.html" class="service-link">
+                Discuss Your Event <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE -->
+  <section class="section-space feature-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Who Can Benefit?</span>
+        <h2>Exhibitions for Different <span class="gradient-text">Industries</span></h2>
+        <p>
+          Exhibition concepts can be adapted to different audiences, products
+          and professional communities.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-shop"></i></div>
+            <h3>Retail & Fashion</h3>
+            <p>Product displays, fashion showcases, retail launches and brand presentations.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-cpu"></i></div>
+            <h3>Technology</h3>
+            <p>Technology showcases, digital products, innovation displays and demonstrations.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-building"></i></div>
+            <h3>Corporate Brands</h3>
+            <p>Business showcases, networking exhibitions and professional industry events.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-brush"></i></div>
+            <h3>Arts & Crafts</h3>
+            <p>Creative showcases, handmade products, art displays and design exhibitions.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section-space process-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Our Planning Process</span>
+        <h2>From First Idea to <span class="gradient-text">Exhibition Day</span></h2>
+        <p>
+          A structured process helps clarify your exhibition requirements
+          and organize the next steps.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-sm-6 col-lg-3 reveal">
+          <div class="process-card">
+            <div class="process-icon"><i class="bi bi-chat-square-text"></i></div>
+            <span class="step-number">STEP 01</span>
+            <h3>Initial Discussion</h3>
+            <p>Share your exhibition goals, preferred dates, audience and requirements.</p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3 reveal">
+          <div class="process-card">
+            <div class="process-icon"><i class="bi bi-lightbulb"></i></div>
+            <span class="step-number">STEP 02</span>
+            <h3>Concept & Layout</h3>
+            <p>Explore display ideas, booth layouts and the overall event experience.</p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3 reveal">
+          <div class="process-card">
+            <div class="process-icon"><i class="bi bi-list-check"></i></div>
+            <span class="step-number">STEP 03</span>
+            <h3>Planning Details</h3>
+            <p>Review the proposed arrangements, priorities, budget and schedule.</p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3 reveal">
+          <div class="process-card">
+            <div class="process-icon"><i class="bi bi-stars"></i></div>
+            <span class="step-number">STEP 04</span>
+            <h3>Event Coordination</h3>
+            <p>Coordinate agreed requirements and work toward your exhibition day.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <span class="eyebrow">
+          <i class="bi bi-stars"></i> Let's Build Your Exhibition
+        </span>
+
+        <h2>Ready to Bring Your Exhibition Idea to Life?</h2>
+
+        <p>
+          Tell us about your brand, products, event goals and preferred
+          arrangements. Let's explore an exhibition concept that suits your needs.
+        </p>
+
+        <a href="contact us.html" class="btn-main">
+          Request an Inquiry <i class="bi bi-arrow-up-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-lg-5 col-md-6">
+          <a href="index.html" class="footer-brand">
+            Event Shpare<span class="brand-dot">.</span>
+          </a>
+          <p>
+            Creative event planning for exhibitions, trade shows, celebrations
+            and professional gatherings.
+          </p>
+
+          <div class="social-links">
+            <a href="https://www.instagram.com/" target="_blank"
+               rel="noopener noreferrer" aria-label="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/" target="_blank"
+               rel="noopener noreferrer" aria-label="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.pinterest.com/" target="_blank"
+               rel="noopener noreferrer" aria-label="Pinterest">
+              <i class="bi bi-pinterest"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about us .html">About Us</a></li>
+            <li><a href="our services.html">Our Services</a></li>
+            <li><a href="contact us.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Our Services</h5>
+          <ul class="footer-links">
+            <li><a href="our services.html">Weddings</a></li>
+            <li><a href="our services.html">Birthdays</a></li>
+            <li><a href="our services.html">Corporate Events</a></li>
+            <li><a href="our services.html">Exhibitions</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5>Plan With Us</h5>
+          <p>
+            Have an exhibition or trade show in mind? Contact us to discuss
+            your concept and requirements.
+          </p>
+          <a href="contact us.html" class="btn-main">
+            Contact Us <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="mb-0">
+          &copy; <span id="year"></span> Event Shpare. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-top" id="backTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Dynamic copyright year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Scroll reveal animations
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealElements.forEach(element => observer.observe(element));
+    } else {
+      revealElements.forEach(element => element.classList.add("visible"));
+    }
+
+    // Back to top
+    const backTop = document.getElementById("backTop");
+
+    window.addEventListener("scroll", () => {
+      backTop.classList.toggle("show", window.scrollY > 400);
+    });
+
+    backTop.addEventListener("click", event => {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+</body>
+</html>
